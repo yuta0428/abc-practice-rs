@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+        "rust-lang.rust-analyzer",
+		"ms-vscode.cpptools",
+		"ms-vscode-remote.remote-wsl",
+		"eamodio.gitlens",
+	],
+}
