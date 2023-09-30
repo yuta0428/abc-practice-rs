@@ -78,7 +78,7 @@ cargo build && oj t -c "target/debug/main"
 fn add_ojsubmit(dir: &char, atcoder_url: &str) {
     let file_path = format!("{dir}/ojsubmit.sh");
     let contents = r#"
-oj {{atcoder_url}} s src/main.rs
+oj s {{atcoder_url}} src/main.rs
     "#;
     let mut args = HashMap::new();
     args.insert("atcoder_url", atcoder_url);
