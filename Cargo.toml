@@ -2,3 +2,6 @@
 name = "abc-practice-rs"
 version = "0.1.0"
 edition = "2021"
+
+[dependencies]
+string_template = "0.2.1"
