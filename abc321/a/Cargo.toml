@@ -1,9 +1,9 @@
 # -*- coding:utf-8-unix -*-
 
 [package]
-name = "{{project-name}}"
+name = "a"
 version = "0.1.0"
-authors = ["{{authors}}"]
+authors = ["yuta0428 <yuta_okamoto428@yahoo.co.jp>"]
 edition = "2018"
 
 [[bin]]
