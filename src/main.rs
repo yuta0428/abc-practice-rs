@@ -1,8 +1,11 @@
 use std::collections::HashMap;
 use std::fs::File;
-use std::io::{self, Write};
+use std::io::Write;
 use std::process::Command;
+use proconio::input;
+// use itertools::Itertools;
 
+use proconio::marker::Chars;
 use string_template::Template;
 
 fn main() {
@@ -10,23 +13,25 @@ fn main() {
 }
 
 fn setup() {
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read line");
-    let n: u32 = input.trim().parse().expect("Please type a number!"); // コンテスト番号 001
-
+    println!("Please Contest Number>> ");
+    input! {
+        n: u32, // コンテスト番号 001
+    }
+    println!("Please Problem Tasks>> ");
+    input! {
+        c: Chars, // 問題 a~f
+    }
     let dir_path = format!("./abc{:03}", n);
-
-    // make directories
-    exec(&format!("rm -r {dir_path}"));
 
     // make directories
     exec(&format!("mkdir -p {dir_path}"));
 
     let _dir_abcd = if n < 126 { "abcd" } else { "abcdef" };
     for (i, dir) in _dir_abcd.chars().enumerate() {
+        if !c.contains(&dir) {continue}
+
         // make directories
+        exec(&format!("rm -r {dir_path}/{dir}"));
         let cmd1 = format!("cargo generate --name {} --path ./template", dir);
         exec(&cmd1);
 
